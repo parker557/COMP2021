@@ -16,7 +16,7 @@ public class SimpleInterpreter {
     static  HashMap<String, Assign>allAssign=new HashMap<>();
     static  HashMap<String, Loop>allLoop=new HashMap<>();
     static  HashMap<String, Block>allBlock=new HashMap<>();
-    public static  void main(String[] args) {
+    public static void main(String[] args) {
 
         boolean flag=true;
         while(flag){
@@ -30,7 +30,7 @@ public class SimpleInterpreter {
                     allVardef.put(cmdArr[1], vardef);
                     System.out.println("@ "+vardef.lab+":"+vardef.typ+"" +vardef.varName+"="+cmdArr[4]);
                     break;
-                case "b-expr":
+                case "binexpr":
                     SimpleInterpreter.Binexpr bexpr = new SimpleInterpreter.Binexpr(cmdArr[1],cmdArr[2],cmdArr[3],cmdArr[4]);
                     allBexpr.put(cmdArr[1],bexpr);
                     System.out.println("@ "+bexpr.expName+":"+bexpr.expRef1+" "+bexpr.bop+" "+bexpr.expRef2);
@@ -219,3 +219,4 @@ public class SimpleInterpreter {
         }
     }
 }
+
